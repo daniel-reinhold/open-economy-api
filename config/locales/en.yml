@@ -1,0 +1,4 @@
+en:
+  errors:
+    not_present: has to be present
+    not_unique: has to be unique

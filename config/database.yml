@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  host: localhost
+  database: open_economy_development
+  username: postgres
+  password: admin
+
+test:
+  <<: *default
+  host: localhost
+  database: open_economy_test
+  username: postgres
+  password: admin
+
+production:
+  <<: *default
+  host:     <%= ENV['DB_HOST'] %>
+  port:     <%= ENV['DB_PORT'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>>
+  password: <%= ENV['DB_PASSWORD'] %>
