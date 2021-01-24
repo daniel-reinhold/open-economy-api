@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>development.log - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../config/credentials_yml_enc.html">credentials.yml.enc</a>
+  
+    <li><a href="../log/development_log.html">development.log</a>
+  
+    <li><a href="../public/robots_txt.html">robots</a>
+  
+    <li><a href="../tmp/development_secret_txt.html">development_secret</a>
+  
+    <li><a href="../tmp/pids/server_pid.html">server.pid</a>
+  
+    <li><a href="../tmp/restart_txt.html">restart</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page log/development.log">
+
+<pre>[1m[35m (7631.1ms)[0m  [1m[35mCREATE DATABASE &quot;open_economy_development&quot; ENCODING = &#39;unicode&#39;[0m
+[1m[35m (6006.2ms)[0m  [1m[35mCREATE DATABASE &quot;open_economy_test&quot; ENCODING = &#39;unicode&#39;[0m
+[1m[35m (79.1ms)[0m  [1m[35mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; character varying NOT NULL PRIMARY KEY)[0m
+[1m[35m (50.7ms)[0m  [1m[35mCREATE TABLE &quot;ar_internal_metadata&quot; (&quot;key&quot; character varying NOT NULL PRIMARY KEY, &quot;value&quot; character varying, &quot;created_at&quot; timestamp(6) NOT NULL, &quot;updated_at&quot; timestamp(6) NOT NULL)[0m
+[1m[35m (2.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4934795739642635265)[0m
+[1m[35m (2.4ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m</pre>
+
+<p>Migrating to <a href="../CreateEmployees.html"><code>CreateEmployees</code></a> (20210122230013)</p>
+
+<pre>[1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (83.6ms)[0m  [1m[35mCREATE TABLE &quot;employees&quot; (&quot;id&quot; bigserial primary key, &quot;first_name&quot; character varying, &quot;last_name&quot; character varying, &quot;username&quot; character varying, &quot;email&quot; character varying, &quot;date_of_birth&quot; date, &quot;password_digest&quot; character varying, &quot;created_at&quot; timestamp(6) NOT NULL, &quot;updated_at&quot; timestamp(6) NOT NULL)[0m
+[1m[36mprimary::SchemaMigration Create (2.6ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES ($1) RETURNING &quot;version&quot;[0m  [[&quot;version&quot;, &quot;20210122230013&quot;]]
+[1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+[1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO &quot;ar_internal_metadata&quot; (&quot;key&quot;, &quot;value&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;key&quot;[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;value&quot;, &quot;development&quot;], [&quot;created_at&quot;, &quot;2021-01-24 11:21:46.283970&quot;], [&quot;updated_at&quot;, &quot;2021-01-24 11:21:46.283970&quot;]]
+[1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4934795739642635265)[0m
+[1m[35m (3.5ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m</pre>
+
+<p>Started GET “/” for 127.0.0.1 at 2021-01-24 12:22:09 +0100</p>
+
+<pre>[1m[35m (2.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m</pre>
+
+<p>Processing by Rails::WelcomeController#index as HTML</p>
+
+<pre>Rendering D:/ruby/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+Rendered D:/ruby/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 99.2ms | Allocations: 505)</pre>
+
+<p>Completed 200 OK in 337ms (Views: 233.4ms | ActiveRecord: 0.0ms | Allocations: 2804)</p>
+
+<p>Started GET “/” for 127.0.0.1 at 2021-01-24 12:27:39 +0100 Processing by Rails::WelcomeController#index as HTML</p>
+
+<pre>Rendering D:/ruby/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+Rendered D:/ruby/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.7ms | Allocations: 179)</pre>
+
+<p>Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 715)</p>
+
+<p>Started GET “/favicon.ico” for 127.0.0.1 at 2021-01-24 12:27:39 +0100</p>
+
+<p>ActionController::RoutingError (No route matches [GET] “/favicon.ico”):</p>
+
+<p>actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call&#39; rack (2.2.3) lib/rack/runtime.rb:22:in `call&#39; activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call&#39; rack (2.2.3) lib/rack/sendfile.rb:110:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call&#39; railties (6.0.3.4) lib/rails/engine.rb:527:in `call&#39; puma (4.3.7) lib/puma/configuration.rb:228:in `call&#39; puma (4.3.7) lib/puma/server.rb:713:in `handle_request&#39; puma (4.3.7) lib/puma/server.rb:472:in `process_client&#39; puma (4.3.7) lib/puma/server.rb:328:in `block in run&#39; puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread&#39; Started GET “/users” for 127.0.0.1 at 2021-01-24 12:28:05 +0100</p>
+
+<p>ActionController::RoutingError (No route matches [GET] “/users”):</p>
+
+<p>actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call&#39; rack (2.2.3) lib/rack/runtime.rb:22:in `call&#39; activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call&#39; rack (2.2.3) lib/rack/sendfile.rb:110:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call&#39; railties (6.0.3.4) lib/rails/engine.rb:527:in `call&#39; puma (4.3.7) lib/puma/configuration.rb:228:in `call&#39; puma (4.3.7) lib/puma/server.rb:713:in `handle_request&#39; puma (4.3.7) lib/puma/server.rb:472:in `process_client&#39; puma (4.3.7) lib/puma/server.rb:328:in `block in run&#39; puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread&#39; Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:28:17 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as HTML Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 1204)</p>
+
+<p>NoMethodError (undefined method `call&#39; for AuthorizeApiRequest:Class):</p>
+
+<p>app/controllers/application_controller.rb:14:in `authenticate_request&#39; Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:29:02 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as HTML Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1087)</p>
+
+<p>NoMethodError (undefined method `call&#39; for AuthorizeApiRequest:Class):</p>
+
+<p>app/controllers/application_controller.rb:14:in `authenticate_request&#39; Started GET “/favicon.ico” for 127.0.0.1 at 2021-01-24 12:29:03 +0100</p>
+
+<p>ActionController::RoutingError (No route matches [GET] “/favicon.ico”):</p>
+
+<p>actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged&#39; activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged&#39; railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call&#39; rack (2.2.3) lib/rack/runtime.rb:22:in `call&#39; activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call&#39; rack (2.2.3) lib/rack/sendfile.rb:110:in `call&#39; actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call&#39; railties (6.0.3.4) lib/rails/engine.rb:527:in `call&#39; puma (4.3.7) lib/puma/configuration.rb:228:in `call&#39; puma (4.3.7) lib/puma/server.rb:713:in `handle_request&#39; puma (4.3.7) lib/puma/server.rb:472:in `process_client&#39; puma (4.3.7) lib/puma/server.rb:328:in `block in run&#39; puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread&#39; Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:30:42 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as HTML Completed 500 Internal Server Error in 122ms (ActiveRecord: 0.0ms | Allocations: 30429)</p>
+
+<p>NoMethodError (undefined method `AuthorizeApiRequest&#39; for #&lt;EmployeesController:0x000000000d619fd8&gt;):</p>
+
+<p>app/controllers/application_controller.rb:14:in `authenticate_request&#39; Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:33:36 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as HTML Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 47ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 583)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:40:28 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong> Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 133)</p>
+
+<p>Started POST “/<a href="FILTERED">employees/create?first_name=Daniel&last_name=Reinhold&username=daniel-reinhold&email=daniel.reinhold261201%40gmail.com&password=</a>” for 127.0.0.1 at 2021-01-24 12:43:34 +0100 Processing by <a href="../EmployeesController.html#method-i-create"><code>EmployeesController#create</code></a> as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;first_name&quot;=&gt;&quot;Daniel&quot;, &quot;last_name&quot;=&gt;&quot;Reinhold&quot;, &quot;username&quot;=&gt;&quot;daniel-reinhold&quot;, &quot;email&quot;=&gt;&quot;daniel.reinhold261201@gmail.com&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;}</pre>
+
+<p>Completed 422 Unprocessable Entity in 840ms (Views: 0.3ms | ActiveRecord: 33.9ms | Allocations: 9282)</p>
+
+<p>Started POST “/<a href="FILTERED">employees/create?first_name=Daniel&last_name=Reinhold&username=daniel-reinhold&email=daniel.reinhold261201%40gmail.com&date_of_birth=2020-12-26&password=</a>” for 127.0.0.1 at 2021-01-24 12:43:51 +0100 Processing by <a href="../EmployeesController.html#method-i-create"><code>EmployeesController#create</code></a> as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;first_name&quot;=&gt;&quot;Daniel&quot;, &quot;last_name&quot;=&gt;&quot;Reinhold&quot;, &quot;username&quot;=&gt;&quot;daniel-reinhold&quot;, &quot;email&quot;=&gt;&quot;daniel.reinhold261201@gmail.com&quot;, &quot;date_of_birth&quot;=&gt;&quot;2020-12-26&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;}
+[1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+↳ app/controllers/employees_controller.rb:22:in `create&#39;
+[1m[36mEmployee Create (4.9ms)[0m  [1m[32mINSERT INTO &quot;employees&quot; (&quot;first_name&quot;, &quot;last_name&quot;, &quot;username&quot;, &quot;email&quot;, &quot;date_of_birth&quot;, &quot;password_digest&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING &quot;id&quot;[0m  [[&quot;first_name&quot;, &quot;Daniel&quot;], [&quot;last_name&quot;, &quot;Reinhold&quot;], [&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;email&quot;, &quot;daniel.reinhold261201@gmail.com&quot;], [&quot;date_of_birth&quot;, &quot;2020-12-26&quot;], [&quot;password_digest&quot;, &quot;$2a$12$mVBCUHodBEjZ04JZhrOC/u5XpSmyUA2OTSjMRqsFp9ZWte5jXFRzi&quot;], [&quot;created_at&quot;, &quot;2021-01-24 11:43:52.568691&quot;], [&quot;updated_at&quot;, &quot;2021-01-24 11:43:52.568691&quot;]]
+↳ app/controllers/employees_controller.rb:22:in `create&#39;
+[1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+↳ app/controllers/employees_controller.rb:22:in `create&#39;</pre>
+<dl class="rdoc-list label-list"><dt>ActiveJob
+<dd>
+<p>Enqueued ActionMailer::MailDeliveryJob (Job ID: ef2a2559-f4a0-44f8-832d-11d62948fece) to Async(mailers) with arguments: “EmployeeMailer”, “employee_registered_email”, “deliver_now”, {:args=&gt;[#&lt;GlobalID:0x000000000d6a6438 @uri=#&lt;URI::GID gid://open-economy-api/Employee/1&gt;&gt;]}</p>
+</dd></dl>
+
+<p>Completed 201 Created in 2857ms (Views: 0.2ms | ActiveRecord: 8.9ms | Allocations: 21492)</p>
+
+<pre>[1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]</pre>
+<dl class="rdoc-list label-list"><dt>ActiveJob
+<dd><dl class="rdoc-list label-list"><dt>ActionMailer::MailDeliveryJob
+<dd><dl class="rdoc-list label-list"><dt>ef2a2559-f4a0-44f8-832d-11d62948fece
+<dd>
+<p>Performing ActionMailer::MailDeliveryJob (Job ID: ef2a2559-f4a0-44f8-832d-11d62948fece) from Async(mailers) enqueued at 2021-01-24T11:43:54Z with arguments: “EmployeeMailer”, “employee_registered_email”, “deliver_now”, {:args=&gt;[#&lt;GlobalID:0x000000000d617828 @uri=#&lt;URI::GID gid://open-economy-api/Employee/1&gt;&gt;]}</p>
+</dd></dl>
+</dd></dl>
+</dd><dt>ActiveJob
+<dd><dl class="rdoc-list label-list"><dt>ActionMailer::MailDeliveryJob
+<dd><dl class="rdoc-list label-list"><dt>ef2a2559-f4a0-44f8-832d-11d62948fece
+<dd>
+<p>Rendering employee_mailer/employee_registered_email.erb within layouts/mailer</p>
+</dd></dl>
+</dd></dl>
+</dd><dt>ActiveJob
+<dd><dl class="rdoc-list label-list"><dt>ActionMailer::MailDeliveryJob
+<dd><dl class="rdoc-list label-list"><dt>ef2a2559-f4a0-44f8-832d-11d62948fece
+<dd>
+<p>Rendered employee_mailer/employee_registered_email.erb within layouts/mailer (Duration: 0.8ms | Allocations: 196)</p>
+</dd></dl>
+</dd></dl>
+</dd><dt>ActiveJob
+<dd><dl class="rdoc-list label-list"><dt>ActionMailer::MailDeliveryJob
+<dd><dl class="rdoc-list label-list"><dt>ef2a2559-f4a0-44f8-832d-11d62948fece
+<dd>
+<p><a href="../EmployeeMailer.html#method-i-employee_registered_email"><code>EmployeeMailer#employee_registered_email</code></a>: processed outbound mail in 27.0ms</p>
+</dd></dl>
+</dd></dl>
+</dd><dt>ActiveJob
+<dd><dl class="rdoc-list label-list"><dt>ActionMailer::MailDeliveryJob
+<dd><dl class="rdoc-list label-list"><dt>ef2a2559-f4a0-44f8-832d-11d62948fece
+<dd>
+<p>Delivered mail 600d5d7b19fa3_2b04a208139aa@LAPTOP-TNETDFGL.mail (2660.4ms)</p>
+</dd></dl>
+</dd></dl>
+</dd><dt>ActiveJob
+<dd><dl class="rdoc-list label-list"><dt>ActionMailer::MailDeliveryJob
+<dd><dl class="rdoc-list label-list"><dt>ef2a2559-f4a0-44f8-832d-11d62948fece
+<dd>
+<p>Date: Sun, 24 Jan 2021 12:43:55 +0100</p>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+
+<p>From: do-not-reply@openeconomy.com To: daniel.reinhold261201@gmail.com Message-ID: &lt;600d5d7b19fa3_2b04a208139aa@LAPTOP-TNETDFGL.mail&gt; Subject: Registration Mime-Version: 1.0 Content-Type: text/html;</p>
+
+<pre class="ruby"><span class="ruby-identifier">charset</span>=<span class="ruby-constant">UTF</span><span class="ruby-value">-8</span>
+</pre>
+
+<p>Content-Transfer-Encoding: 7bit</p>
+
+<p>&lt;!DOCTYPE html&gt; &lt;html&gt;</p>
+
+<pre>&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;style&gt;
+    /* Email styles need to be inline */
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!DOCTYPE html&gt;</pre>
+
+<p>&lt;html&gt;</p>
+
+<pre>&lt;head&gt;
+  &lt;meta content=&quot;text/html; charset=UTF-8&quot; http-equiv=&quot;Content-Type&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Registration at OpenEconomy&lt;/h1&gt;
+  &lt;h2&gt;Details:&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      First name: Daniel
+    &lt;/li&gt;
+    &lt;li&gt;
+      Last name: Reinhold
+    &lt;/li&gt;
+    &lt;li&gt;
+      Username: daniel-reinhold
+    &lt;/li&gt;
+    &lt;li&gt;
+      Email: daniel.reinhold261201@gmail.com
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;
+    Best regards,
+    &lt;br /&gt;
+    &lt;br /&gt;
+    OpenEconomy Human Resources Team
+  &lt;/p&gt;
+&lt;/body&gt;</pre>
+
+<p>&lt;/html&gt;</p>
+
+<pre>&lt;/body&gt;</pre>
+
+<p>&lt;/html&gt;</p>
+<dl class="rdoc-list label-list"><dt>ActiveJob
+<dd><dl class="rdoc-list label-list"><dt>ActionMailer::MailDeliveryJob
+<dd><dl class="rdoc-list label-list"><dt>ef2a2559-f4a0-44f8-832d-11d62948fece
+<dd>
+<p>Performed ActionMailer::MailDeliveryJob (Job ID: ef2a2559-f4a0-44f8-832d-11d62948fece) from Async(mailers) in 2698.1ms</p>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:44:00 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong></p>
+
+<pre>[1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot;[0m
+↳ app/helpers/application_helper.rb:4:in `formatted&#39;</pre>
+
+<p>Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 866)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:44:08 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong> Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 416)</p>
+
+<p>Started POST “/authenticate” for 127.0.0.1 at 2021-01-24 12:45:40 +0100 Processing by <a href="../AuthenticationController.html#method-i-authenticate"><code>AuthenticationController#authenticate</code></a> as <strong>/</strong> Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms | Allocations: 1172)</p>
+
+<p>NoMethodError (undefined method `call&#39; for AuthenticateEmployee:Class):</p>
+
+<p>app/controllers/authentication_controller.rb:5:in `authenticate&#39; Started POST “/authenticate” for 127.0.0.1 at 2021-01-24 12:46:00 +0100 Processing by <a href="../AuthenticationController.html#method-i-authenticate"><code>AuthenticationController#authenticate</code></a> as <strong>/</strong></p>
+
+<pre>[1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; IS NULL LIMIT $1[0m  [[&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;</pre>
+
+<p>Completed 401 Unauthorized in 45ms (Views: 0.3ms | ActiveRecord: 4.5ms | Allocations: 2186)</p>
+
+<p>Started POST “/authenticate?username=daniel-reinhold” for 127.0.0.1 at 2021-01-24 12:46:13 +0100 Processing by <a href="../AuthenticationController.html#method-i-authenticate"><code>AuthenticationController#authenticate</code></a> as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;username&quot;=&gt;&quot;daniel-reinhold&quot;}
+[1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;</pre>
+
+<p>Completed 401 Unauthorized in 562ms (Views: 0.3ms | ActiveRecord: 5.1ms | Allocations: 5166)</p>
+
+<p>Started POST “/<a href="FILTERED">authenticate?username=daniel-reinhold&password=</a>” for 127.0.0.1 at 2021-01-24 12:46:22 +0100 Processing by <a href="../AuthenticationController.html#method-i-authenticate"><code>AuthenticationController#authenticate</code></a> as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;username&quot;=&gt;&quot;daniel-reinhold&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;}
+[1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;
+[1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;</pre>
+
+<p>Completed 200 OK in 1158ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 2679)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:46:31 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong> Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 11ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 304)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:46:41 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong> Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 138)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:46:43 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong> Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 138)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:47:05 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong> Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 138)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:49:39 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong></p>
+
+<pre>[1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authorize_api_request.rb:19:in `employee&#39;
+[1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot;[0m
+↳ app/helpers/application_helper.rb:4:in `formatted&#39;</pre>
+
+<p>Completed 200 OK in 138ms (Views: 0.3ms | ActiveRecord: 16.7ms | Allocations: 7418)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:49:49 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong> Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 135)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:49:52 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong> Filter chain halted as :authenticate_request rendered or redirected Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 197)</p>
+
+<p>Started POST “/<a href="FILTERED">authenticate?username=daniel-reinhold&password=</a>” for 127.0.0.1 at 2021-01-24 12:50:00 +0100 Processing by <a href="../AuthenticationController.html#method-i-authenticate"><code>AuthenticationController#authenticate</code></a> as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;username&quot;=&gt;&quot;daniel-reinhold&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;}
+[1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;
+[1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;</pre>
+
+<p>Completed 200 OK in 1079ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1563)</p>
+
+<p>Started POST “/<a href="FILTERED">authenticate?username=daniel-reinhold&password=</a>” for 127.0.0.1 at 2021-01-24 12:50:04 +0100 Processing by <a href="../AuthenticationController.html#method-i-authenticate"><code>AuthenticationController#authenticate</code></a> as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;username&quot;=&gt;&quot;daniel-reinhold&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;}
+[1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;
+[1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;</pre>
+
+<p>Completed 200 OK in 1078ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1294)</p>
+
+<p>Started POST “/<a href="FILTERED">authenticate?username=daniel-reinhold&password=</a>” for 127.0.0.1 at 2021-01-24 12:50:06 +0100 Processing by <a href="../AuthenticationController.html#method-i-authenticate"><code>AuthenticationController#authenticate</code></a> as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;username&quot;=&gt;&quot;daniel-reinhold&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;}
+[1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;
+[1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;</pre>
+
+<p>Completed 200 OK in 1091ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1294)</p>
+
+<p>Started POST “/<a href="FILTERED">authenticate?username=daniel-reinhold&password=</a>” for 127.0.0.1 at 2021-01-24 12:50:08 +0100 Processing by <a href="../AuthenticationController.html#method-i-authenticate"><code>AuthenticationController#authenticate</code></a> as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;username&quot;=&gt;&quot;daniel-reinhold&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;}
+[1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;
+[1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;username&quot; = $1 LIMIT $2[0m  [[&quot;username&quot;, &quot;daniel-reinhold&quot;], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authenticate_employee.rb:18:in `employee&#39;</pre>
+
+<p>Completed 200 OK in 1066ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1302)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 12:50:23 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong></p>
+
+<pre>[1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authorize_api_request.rb:19:in `employee&#39;
+[1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot;[0m
+↳ app/helpers/application_helper.rb:4:in `formatted&#39;</pre>
+
+<p>Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 1550)</p>
+
+<p>Started GET “/employees” for 127.0.0.1 at 2021-01-24 13:07:13 +0100 Processing by <a href="../EmployeesController.html#method-i-index"><code>EmployeesController#index</code></a> as <strong>/</strong></p>
+
+<pre>[1m[36mEmployee Load (3.9ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot; WHERE &quot;employees&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+↳ app/commands/authorize_api_request.rb:19:in `employee&#39;</pre>
+
+<p>Employee::ActiveRecord_Relation</p>
+
+<pre>[1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT &quot;employees&quot;.* FROM &quot;employees&quot;[0m
+↳ app/helpers/application_helper.rb:15:in `formatted&#39;</pre>
+
+<p>Completed 200 OK in 100ms (Views: 0.7ms | ActiveRecord: 5.7ms | Allocations: 7310)</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

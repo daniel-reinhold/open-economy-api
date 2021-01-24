@@ -1,5 +1,5 @@
 class AuthenticateEmployee
-  prepended SimpleCommand
+  prepend SimpleCommand
 
   def initialize(username, password)
     @username = username

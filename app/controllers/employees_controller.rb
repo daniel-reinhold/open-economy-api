@@ -7,6 +7,8 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
 
+    Rails.logger.error(Employee.all.class)
+
     render :json => formatted(@employees, DEFAULT_FIELDS), :status => 200
   end
 

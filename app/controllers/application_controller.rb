@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
   private
 
   def authenticate_request
-    @current_employee = AuthorizeApiRequest::call(request.headers).result
+    @current_employee = AuthorizeApiRequest.call(request.headers).result
     render :json => {:error => 'Not authorized'}, :status => 401 unless @current_employee
   end
 

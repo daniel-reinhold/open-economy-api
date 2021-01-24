@@ -1,5 +1,5 @@
 class AuthorizeApiRequest
-  prepended SimpleCommand
+  prepend SimpleCommand
 
   public
 
